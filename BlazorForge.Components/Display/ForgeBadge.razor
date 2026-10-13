@@ -1,0 +1,26 @@
+<span class="@CssClass">
+    @if (ShowDot)
+    {
+        <span class="forge-badge-dot" aria-hidden="true"></span>
+    }
+
+    @ChildContent
+</span>
+
+@code {
+    [Parameter]
+    public BadgeVariant Variant { get; set; } = BadgeVariant.Neutral;
+
+    [Parameter]
+    public BadgeSize Size { get; set; } = BadgeSize.Medium;
+
+    [Parameter]
+    public bool ShowDot { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    private string CssClass =>
+        $"forge-badge forge-badge-{Variant.ToString().ToLowerInvariant()} " +
+        $"forge-badge-{Size.ToString().ToLowerInvariant()}";
+}

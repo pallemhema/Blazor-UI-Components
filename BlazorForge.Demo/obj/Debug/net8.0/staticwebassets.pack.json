@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Demo/obj/Debug/net8.0/scopedcss/projectbundle/BlazorForge.Demo.bundle.scp.css",
+      "PackagePath": "staticwebassets/BlazorForge.Demo.bundle.scp.css"
+    },
+    {
+      "Id": "/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Demo/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Demo/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Demo/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Demo/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.BlazorForge.Demo.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.BlazorForge.Demo.props",
+      "PackagePath": "build\\BlazorForge.Demo.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.BlazorForge.Demo.props",
+      "PackagePath": "buildMultiTargeting\\BlazorForge.Demo.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.BlazorForge.Demo.props",
+      "PackagePath": "buildTransitive\\BlazorForge.Demo.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,58 @@
+<div class="forge-progress-container">
+    @if (!string.IsNullOrWhiteSpace(Label) || ShowPercentage)
+    {
+        <div class="forge-progress-header">
+            @if (!string.IsNullOrWhiteSpace(Label))
+            {
+                <label>@Label</label>
+            }
+
+            @if (ShowPercentage)
+            {
+                <span>@Percentage%</span>
+            }
+        </div>
+    }
+
+    <div class="forge-progress-track"
+         role="progressbar"
+         aria-label="@AriaLabel"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         aria-valuenow="@Percentage">
+
+        <div class="forge-progress-segment forge-progress-light"></div>
+        <div class="forge-progress-segment forge-progress-medium"></div>
+        <div class="forge-progress-segment forge-progress-dark"></div>
+
+        <div class="forge-progress-remaining"
+             style="width: calc(100% - @(Percentage)%);">
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public int Value { get; set; }
+
+    [Parameter]
+    public string? Label { get; set; }
+
+    [Parameter]
+    public string? AriaLabel { get; set; }
+
+    [Parameter]
+    public bool ShowPercentage { get; set; } = true;
+
+    private int Percentage => Math.Clamp(Value, 0, 100);
+
+    protected override void OnParametersSet()
+    {
+        if (string.IsNullOrWhiteSpace(AriaLabel))
+        {
+            AriaLabel = string.IsNullOrWhiteSpace(Label)
+                ? "Progress"
+                : Label;
+        }
+    }
+}

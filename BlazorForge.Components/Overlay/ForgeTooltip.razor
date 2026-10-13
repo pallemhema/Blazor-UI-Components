@@ -1,0 +1,48 @@
+@namespace BlazorForge.Components.Overlay
+
+<span class="forge-tooltip-container"
+      @onmouseenter="ShowTooltip"
+      @onmouseleave="HideTooltip"
+      @onfocusin="ShowTooltip"
+      @onfocusout="HideTooltip">
+
+    <span class="forge-tooltip-trigger">
+        @ChildContent
+    </span>
+
+    @if (_isVisible && !string.IsNullOrWhiteSpace(Text))
+    {
+        <span class="@TooltipCssClass" role="tooltip">
+            @Text
+        </span>
+    }
+</span>
+
+@code {
+    [Parameter]
+    public string Text { get; set; } = string.Empty;
+
+    [Parameter]
+    public TooltipPlacement Placement { get; set; }
+        = TooltipPlacement.Top;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    private bool _isVisible;
+
+    private string TooltipCssClass =>
+        $"forge-tooltip forge-tooltip-{Placement.ToString().ToLowerInvariant()}";
+
+    private void ShowTooltip()
+    {
+        _isVisible = true;
+    }
+
+    private void HideTooltip()
+    {
+        _isVisible = false;
+    }
+
+
+}

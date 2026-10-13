@@ -1,0 +1,39 @@
+﻿@inherits LayoutComponentBase
+
+<div class="forge-app-shell">
+    <aside class="forge-sidebar">
+        <NavMenu />
+    </aside>
+
+    <main class="forge-main">
+        <header class="forge-topbar">
+            <div>
+                <span class="forge-topbar-label">COMPONENT LIBRARY</span>
+                <span class="forge-topbar-separator">/</span>
+                <span class="forge-topbar-current">Interactive Showcase</span>
+            </div>
+
+            <a class="forge-docs-link"
+               href="https://learn.microsoft.com/aspnet/core/blazor/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Blazor Docs ↗
+            </a>
+        </header>
+
+        <section class="forge-page-content">
+            @Body
+        </section>
+
+        <footer class="forge-footer">
+            <span>BlazorForge UI</span>
+            <span>Built with Blazor and .NET 8</span>
+        </footer>
+    </main>
+</div>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>

@@ -1,0 +1,222 @@
+.forge-navigation {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    gap: 0;
+    padding: 0 14px 16px;
+    box-sizing: border-box;
+}
+
+/* Brand */
+
+.forge-sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 96px;
+    margin: 0 -14px 24px;
+    padding: 20px 20px;
+    border-bottom: 1px solid rgb(255 255 255 / 9%);
+    box-sizing: border-box;
+}
+
+.forge-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #818cf8, #4f46e5);
+    color: #fff;
+    font-size: 21px;
+    font-weight: 800;
+    box-shadow: 0 4px 14px rgb(79 70 229 / 25%);
+}
+
+.forge-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.forge-brand-name {
+    color: #f8fafc;
+    font-size: 17px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+    white-space: nowrap;
+}
+
+.forge-brand-caption {
+    color: #94a3b8;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    white-space: nowrap;
+}
+
+/* Navigation sections */
+
+.forge-nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 28px;
+}
+
+.forge-nav-heading {
+    margin: 0 0 7px;
+    padding: 0 11px;
+    color: #94a3b8;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 1.4px;
+}
+
+/* NavLink renders an anchor, so use ::deep with CSS isolation. */
+
+.forge-nav-section ::deep .forge-nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+        background-color 160ms ease,
+        color 160ms ease,
+        border-color 160ms ease;
+}
+
+.forge-nav-section ::deep .forge-nav-link:hover {
+    background: rgb(255 255 255 / 6%);
+    color: #fff;
+    text-decoration: none;
+}
+
+.forge-nav-section ::deep .forge-nav-link.active {
+    background: rgb(99 102 241 / 17%);
+    border-color: rgb(129 140 248 / 20%);
+    color: #c7d2fe;
+    font-weight: 650;
+}
+
+.forge-nav-section ::deep .forge-nav-link.active::before {
+    position: absolute;
+    top: 9px;
+    bottom: 9px;
+    left: -1px;
+    width: 3px;
+    border-radius: 0 4px 4px 0;
+    background: #818cf8;
+    content: "";
+}
+
+.forge-nav-section ::deep .forge-nav-link:focus-visible {
+    outline: 2px solid #818cf8;
+    outline-offset: 2px;
+}
+
+/* Icons */
+
+.forge-nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: #94a3b8;
+}
+
+.forge-nav-icon svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.forge-nav-section ::deep .forge-nav-link.active .forge-nav-icon {
+    color: #a5b4fc;
+}
+
+.forge-nav-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Sidebar footer */
+
+.forge-sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: auto;
+    padding: 15px 10px 8px;
+    border-top: 1px solid rgb(255 255 255 / 9%);
+}
+
+.forge-sidebar-footer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: rgb(34 197 94 / 12%);
+    color: #86efac;
+    font-size: 14px;
+}
+
+.forge-sidebar-footer-title,
+.forge-sidebar-footer-text {
+    display: block;
+}
+
+.forge-sidebar-footer-title {
+    color: #e2e8f0;
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.forge-sidebar-footer-text {
+    margin-top: 4px;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+/* Smaller viewports */
+
+@media (max-width: 768px) {
+    .forge-sidebar-brand {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .forge-nav-section ::deep .forge-nav-link {
+        min-height: 42px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .forge-nav-section ::deep .forge-nav-link {
+        transition: none;
+    }
+}

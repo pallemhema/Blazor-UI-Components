@@ -1,0 +1,185 @@
+.forge-app-shell[b-bgoj6weo9g] {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f8fc;
+  color: #172033;
+}
+
+.forge-sidebar[b-bgoj6weo9g] {
+  width: 220px;
+  min-width: 220px;
+  min-height: 100vh;
+  background: #111827;
+  color: #f9fafb;
+}
+
+.forge-main[b-bgoj6weo9g] {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.forge-topbar[b-bgoj6weo9g] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: 0 36px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.forge-topbar-title[b-bgoj6weo9g] {
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.forge-topbar-link[b-bgoj6weo9g] {
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.forge-topbar-link:hover[b-bgoj6weo9g] {
+  text-decoration: underline;
+}
+
+.forge-page-content[b-bgoj6weo9g] {
+  padding: 40px;
+}
+.forge-content[b-bgoj6weo9g] {
+  flex: 1;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 36px;
+}
+
+.forge-footer[b-bgoj6weo9g] {
+  padding: 20px 36px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 12px;
+}
+
+#blazor-error-ui[b-bgoj6weo9g] {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  padding: 14px 20px;
+  background: #fff7ed;
+  color: #7c2d12;
+  box-shadow: 0 -2px 8px rgb(15 23 42 / 10%);
+}
+
+#blazor-error-ui .reload[b-bgoj6weo9g] {
+  margin-left: 10px;
+  color: #4f46e5;
+}
+
+#blazor-error-ui .dismiss[b-bgoj6weo9g] {
+  float: right;
+  cursor: pointer;
+}
+.forge-app-shell[b-bgoj6weo9g] {
+  display: flex;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+/* Sidebar stays in place while the document scrolls. */
+
+.forge-sidebar[b-bgoj6weo9g] {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 100vh;
+  height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #111827;
+  color: #f8fafc;
+  border-right: 1px solid rgb(255 255 255 / 6%);
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #374151 #111827;
+}
+
+/* Main area leaves room for the fixed sidebar. */
+
+.forge-main[b-bgoj6weo9g] {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: 250px;
+}
+
+/* Top bar scrolls away with the page. */
+
+.forge-topbar[b-bgoj6weo9g] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 64px;
+  padding: 0 32px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  box-sizing: border-box;
+}
+
+.forge-page-content[b-bgoj6weo9g] {
+  flex: 1;
+  min-width: 0;
+  padding: 32px;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+.forge-footer[b-bgoj6weo9g] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 32px;
+  color: #64748b;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  font-size: 12px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 768px) {
+  .forge-sidebar[b-bgoj6weo9g] {
+    width: 220px;
+  }
+
+  .forge-main[b-bgoj6weo9g] {
+    margin-left: 220px;
+  }
+
+  .forge-topbar[b-bgoj6weo9g] {
+    padding: 0 18px;
+  }
+
+  .forge-page-content[b-bgoj6weo9g] {
+    padding: 22px 18px;
+  }
+
+  .forge-footer[b-bgoj6weo9g] {
+    padding: 16px 18px;
+  }
+}

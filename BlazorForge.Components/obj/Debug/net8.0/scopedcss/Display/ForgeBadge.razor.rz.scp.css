@@ -1,0 +1,58 @@
+.forge-badge[b-70zw5yagar] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: fit-content;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.forge-badge-small[b-70zw5yagar] {
+    padding: 0.15rem 0.5rem;
+    font-size: 0.7rem;
+}
+
+.forge-badge-medium[b-70zw5yagar] {
+    padding: 0.25rem 0.65rem;
+    font-size: 0.8rem;
+}
+
+.forge-badge-primary[b-70zw5yagar] {
+    background: #eef2ff;
+    border-color: #c7d2fe;
+    color: #3730a3;
+}
+
+.forge-badge-success[b-70zw5yagar] {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #166534;
+}
+
+.forge-badge-warning[b-70zw5yagar] {
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #92400e;
+}
+
+.forge-badge-danger[b-70zw5yagar] {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #991b1b;
+}
+
+.forge-badge-neutral[b-70zw5yagar] {
+    background: #f3f4f6;
+    border-color: #e5e7eb;
+    color: #374151;
+}
+
+.forge-badge-dot[b-70zw5yagar] {
+    width: 0.4rem;
+    height: 0.4rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: currentColor;
+}

@@ -1,0 +1,163 @@
+@page "/buttons"
+
+@using BlazorForge.Components
+@using BlazorForge.Components.Buttons
+@using Microsoft.AspNetCore.Components.Web
+@rendermode InteractiveServer
+
+<PageTitle>Buttons | BlazorForge</PageTitle>
+
+<div class="forge-component-page">
+
+    <div class="forge-page-header">
+        <div>
+            <div class="forge-page-eyebrow">COMPONENTS / BUTTONS</div>
+
+            <h1>Buttons</h1>
+
+            <p>
+                Interactive buttons with consistent styling, flexible
+                variants, and configurable sizes.
+            </p>
+        </div>
+    </div>
+
+    @* Button variants *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Variants</h2>
+
+            <p>
+                Use different button variants to communicate the
+                importance and purpose of an action.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview">
+
+            <ForgeButton Variant="ButtonVariant.Primary">
+                Primary
+            </ForgeButton>
+
+            <ForgeButton Variant="ButtonVariant.Secondary">
+                Secondary
+            </ForgeButton>
+
+            <ForgeButton Variant="ButtonVariant.Outline">
+                Outline
+            </ForgeButton>
+
+            <ForgeButton Variant="ButtonVariant.Danger">
+                Danger
+            </ForgeButton>
+
+        </div>
+
+    </section>
+
+    @* Button sizes *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Sizes</h2>
+
+            <p>
+                Choose a size that fits the surrounding interface
+                and the importance of the action.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview">
+
+            <ForgeButton Size="ButtonSize.Small">
+                Small
+            </ForgeButton>
+
+            <ForgeButton Size="ButtonSize.Medium">
+                Medium
+            </ForgeButton>
+
+            <ForgeButton Size="ButtonSize.Large">
+                Large
+            </ForgeButton>
+
+        </div>
+
+    </section>
+
+    @* Disabled state *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Disabled state</h2>
+
+            <p>
+                Disabled buttons prevent users from triggering
+                actions that are currently unavailable.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview">
+
+            <ForgeButton Variant="ButtonVariant.Primary"
+                         Disabled="true">
+                Primary disabled
+            </ForgeButton>
+
+            <ForgeButton Variant="ButtonVariant.Outline"
+                         Disabled="true">
+                Outline disabled
+            </ForgeButton>
+
+        </div>
+
+    </section>
+
+    @* Interactive example *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Click interaction</h2>
+
+            <p>
+                Buttons can notify their parent component through
+                EventCallback when users click them.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-interactive-preview">
+
+            <ForgeButton Variant="ButtonVariant.Primary"
+                         OnClick="HandleClick">
+                Click me
+            </ForgeButton>
+
+            @if (_clickCount > 0)
+            {
+                <p class="forge-click-message">
+                    Button clicked @_clickCount
+                    @(_clickCount == 1 ? "time" : "times").
+                </p>
+            }
+
+        </div>
+
+    </section>
+
+</div>
+
+@code {
+
+    private int _clickCount;
+
+    private void HandleClick(MouseEventArgs args)
+    {
+        _clickCount++;
+    }
+
+}

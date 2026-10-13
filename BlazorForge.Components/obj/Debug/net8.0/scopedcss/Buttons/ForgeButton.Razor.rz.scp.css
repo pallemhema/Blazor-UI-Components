@@ -1,0 +1,83 @@
+.forge-button[b-820wb0axvr] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition:
+        background-color 150ms ease,
+        border-color 150ms ease;
+}
+
+.forge-button:focus-visible[b-820wb0axvr] {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.forge-button:disabled[b-820wb0axvr] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Variants */
+
+.forge-button-primary[b-820wb0axvr] {
+    background-color: #2563eb;
+    color: white;
+}
+
+.forge-button-primary:hover:not(:disabled)[b-820wb0axvr] {
+    background-color: #1d4ed8;
+}
+
+.forge-button-secondary[b-820wb0axvr] {
+    background-color: #e5e7eb;
+    color: #111827;
+}
+
+.forge-button-secondary:hover:not(:disabled)[b-820wb0axvr] {
+    background-color: #d1d5db;
+}
+
+.forge-button-danger[b-820wb0axvr] {
+    background-color: #dc2626;
+    color: white;
+}
+
+.forge-button-danger:hover:not(:disabled)[b-820wb0axvr] {
+    background-color: #b91c1c;
+}
+
+.forge-button-outline[b-820wb0axvr] {
+    background-color: transparent;
+    border-color: #9ca3af;
+    color: #111827;
+}
+
+.forge-button-outline:hover:not(:disabled)[b-820wb0axvr] {
+    background-color: #f3f4f6;
+}
+
+/* Sizes */
+
+.forge-button-small[b-820wb0axvr] {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8125rem;
+}
+
+.forge-button-medium[b-820wb0axvr] {
+    padding: 0.625rem 1rem;
+    font-size: 0.9375rem;
+}
+
+.forge-button-large[b-820wb0axvr] {
+    padding: 0.875rem 1.5rem;
+    font-size: 1.0625rem;
+}

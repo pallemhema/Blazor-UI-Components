@@ -1,0 +1,41 @@
+@using System.ComponentModel.DataAnnotations
+@using BlazorForge.Components.Forms
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Forms
+
+<EditForm Model="@Model">
+    <DataAnnotationsValidator />
+
+    <ForgeTextArea Label="@Label"
+                   Placeholder="@Placeholder"
+                   Rows="@Rows"
+                   Disabled="@Disabled"
+                   ReadOnly="@ReadOnly"
+                   @bind-Value="Model.Description" />
+</EditForm>
+
+@code {
+    [Parameter]
+    public FormModel Model { get; set; } = new();
+
+    [Parameter]
+    public string? Label { get; set; }
+
+    [Parameter]
+    public string? Placeholder { get; set; }
+
+    [Parameter]
+    public int Rows { get; set; } = 4;
+
+    [Parameter]
+    public bool Disabled { get; set; }
+
+    [Parameter]
+    public bool ReadOnly { get; set; }
+
+    public sealed class FormModel
+    {
+        [Required(ErrorMessage = "Description is required.")]
+        public string? Description { get; set; }
+    }
+}

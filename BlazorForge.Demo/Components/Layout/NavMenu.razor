@@ -1,0 +1,133 @@
+﻿
+<nav class="forge-navigation">
+
+    @* Brand *@
+
+    <div class="forge-sidebar-brand">
+        <div class="forge-brand-icon">F</div>
+
+        <div class="forge-brand-text">
+            <span class="forge-brand-name">BlazorForge</span>
+            <span class="forge-brand-caption">UI COMPONENTS</span>
+        </div>
+    </div>
+
+    @* Overview *@
+
+    <div class="forge-nav-section">
+
+        <span class="forge-nav-heading">OVERVIEW</span>
+
+        <NavLink href="/"
+                 Match="NavLinkMatch.All"
+                 class="forge-nav-link">
+
+            <span class="forge-nav-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="m3 10 9-7 9 7" />
+                    <path d="M5 9v12h14V9" />
+                    <path d="M9 21v-7h6v7" />
+                </svg>
+            </span>
+
+            <span class="forge-nav-label">Dashboard</span>
+
+        </NavLink>
+
+    </div>
+
+    @* Components *@
+
+    <div class="forge-nav-section">
+
+        <span class="forge-nav-heading">COMPONENTS</span>
+
+        <NavLink href="/buttons" class="forge-nav-link">
+
+            <span class="forge-nav-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="6" width="18" height="12" rx="3" />
+                    <path d="M8 12h8" />
+                </svg>
+            </span>
+
+            <span class="forge-nav-label">Buttons</span>
+
+        </NavLink>
+
+        <NavLink href="/forms" class="forge-nav-link">
+
+            <span class="forge-nav-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <rect x="4" y="3" width="16" height="18" rx="2" />
+                    <path d="M8 8h8M8 12h8M8 16h5" />
+                </svg>
+            </span>
+
+            <span class="forge-nav-label">Forms</span>
+
+        </NavLink>
+
+        <NavLink href="/feedback" class="forge-nav-link">
+
+            <span class="forge-nav-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3 22 21H2L12 3Z" />
+                    <path d="M12 9v5M12 17h.01" />
+                </svg>
+            </span>
+
+            <span class="forge-nav-label">Feedback</span>
+
+        </NavLink>
+
+        <NavLink href="/display" class="forge-nav-link">
+
+            <span class="forge-nav-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="8" height="8" rx="2" />
+                    <rect x="13" y="3" width="8" height="5" rx="2" />
+                    <rect x="13" y="10" width="8" height="11" rx="2" />
+                    <rect x="3" y="13" width="8" height="8" rx="2" />
+                </svg>
+            </span>
+
+            <span class="forge-nav-label">Display</span>
+
+        </NavLink>
+
+        <NavLink href="/overlays" class="forge-nav-link">
+
+            <span class="forge-nav-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                <rect x="5" y="5" width="14" height="14" rx="2" />
+                <path d="M9 3h12v12" />
+                </svg>
+            </span>
+
+
+            <span class="forge-nav-label">Overlays</span>
+
+        </NavLink>
+
+    </div>
+
+    @* Sidebar footer *@
+
+    <div class="forge-sidebar-footer">
+
+        <div class="forge-sidebar-footer-icon">✓</div>
+
+        <div>
+            <span class="forge-sidebar-footer-title">
+                Component library
+            </span>
+
+            <span class="forge-sidebar-footer-text">
+                Built with .NET 8
+            </span>
+        </div>
+
+    </div>
+
+</nav>

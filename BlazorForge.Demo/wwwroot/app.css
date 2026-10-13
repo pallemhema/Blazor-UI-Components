@@ -1,0 +1,102 @@
+/* ========================================
+   Global styles
+   ======================================== */
+body {
+    background-color: hotpink !important;
+}
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #172033;
+    background: #f6f8fc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+h1:focus,
+h2:focus,
+h3:focus {
+    outline: none;
+}
+
+/* ========================================
+   Blazor form validation
+   ======================================== */
+
+.valid.modified:not([type="checkbox"]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid #e50000;
+}
+
+.validation-message {
+    color: #dc2626;
+    font-size: 12px;
+}
+
+/* ========================================
+   Blazor error boundary
+   ======================================== */
+
+.blazor-error-boundary {
+    background: #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}
+
+.blazor-error-boundary::after {
+    content: "An error has occurred.";
+}
+
+/* ========================================
+   Blazor error UI
+   ======================================== */
+
+#blazor-error-ui {
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    padding: 0.8rem 1.2rem;
+    background: #fff7ed;
+    color: #7c2d12;
+    box-shadow: 0 -2px 8px rgb(15 23 42 / 10%);
+}
+
+#blazor-error-ui .reload {
+    margin-left: 10px;
+    color: #4f46e5;
+}
+
+#blazor-error-ui .dismiss {
+    float: right;
+    cursor: pointer;
+}
+
+/* ========================================
+   Accessibility
+   ======================================== */
+
+:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 3px;
+}

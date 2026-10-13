@@ -1,0 +1,263 @@
+@page "/feedback"
+@rendermode InteractiveServer
+
+@using BlazorForge.Components.Feedback
+
+<PageTitle>Feedback | BlazorForge</PageTitle>
+
+<div class="forge-component-page">
+
+    @* Page header *@
+
+    <div class="forge-page-header">
+        <div>
+            <div class="forge-page-eyebrow">COMPONENTS / FEEDBACK</div>
+
+            <h1>Feedback</h1>
+
+            <p>
+                Communicate status, display loading states, and
+                visualize progress with reusable feedback components.
+            </p>
+        </div>
+    </div>
+
+    @* Alerts *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Alerts</h2>
+
+            <p>
+                Display contextual messages to communicate success,
+                information, warnings, and errors.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-alert-preview">
+
+            <ForgeAlert Variant="AlertVariant.Success"
+                        Title="Success">
+                Your changes have been saved successfully.
+            </ForgeAlert>
+
+            <ForgeAlert Variant="AlertVariant.Info"
+                        Title="Information">
+                A new version of this component is available.
+            </ForgeAlert>
+
+            <ForgeAlert Variant="AlertVariant.Warning"
+                        Title="Warning">
+                Please review your information before continuing.
+            </ForgeAlert>
+
+            <ForgeAlert Variant="AlertVariant.Error"
+                        Title="Error">
+                Something went wrong while processing your request.
+            </ForgeAlert>
+
+        </div>
+
+    </section>
+
+    @* Dismissible alert *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Dismissible alert</h2>
+
+            <p>
+                Allow users to dismiss temporary messages when
+                they no longer need them.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-alert-preview">
+
+            @if (_showDismissibleAlert)
+            {
+                <ForgeAlert Variant="AlertVariant.Success"
+                            Title="Profile updated"
+                            Dismissible="true"
+                            OnDismiss="DismissAlert">
+                    Your profile information has been updated.
+                </ForgeAlert>
+            }
+            else
+            {
+                <p class="forge-feedback-note">
+                    The alert has been dismissed.
+                </p>
+
+                <button class="forge-action-button"
+                        @onclick="ShowAlert">
+                    Show alert again
+                </button>
+            }
+
+        </div>
+
+    </section>
+
+    @* Spinner *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Loading indicators</h2>
+
+            <p>
+                Use spinners to indicate that an operation is in progress.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-spinner-preview">
+
+            <div class="forge-spinner-example">
+                <ForgeSpinner Size="SpinnerSize.Small"
+                              Label="Small loading indicator" />
+
+                <span>Small</span>
+            </div>
+
+            <div class="forge-spinner-example">
+                <ForgeSpinner Size="SpinnerSize.Medium"
+                              Label="Medium loading indicator" />
+
+                <span>Medium</span>
+            </div>
+
+            <div class="forge-spinner-example">
+                <ForgeSpinner Size="SpinnerSize.Large"
+                              Label="Large loading indicator" />
+
+                <span>Large</span>
+            </div>
+
+        </div>
+
+        <div class="forge-demo-preview forge-loading-demo">
+
+            <div class="forge-loading-status">
+                @if (_isLoading)
+                {
+                    <ForgeSpinner Label="Loading sample data" />
+
+                    <span>Loading sample data...</span>
+                }
+                else
+                {
+                    <span class="forge-loaded-indicator">
+                        ✓ Sample data loaded
+                    </span>
+                }
+            </div>
+
+            <button class="forge-action-button"
+                    disabled="@_isLoading"
+                    @onclick="LoadDataAsync">
+                @(_isLoading ? "Loading..." : "Simulate loading")
+            </button>
+
+        </div>
+
+    </section>
+
+    @* Progress bar *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Progress bar</h2>
+
+            <p>
+                Visualize the completion of an operation with a
+                percentage-based progress indicator.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-progress-preview">
+
+            <div class="forge-progress-controls">
+                <span>Current progress</span>
+
+                <strong>@_progress%</strong>
+            </div>
+
+            <ForgeProgressBar Value="_progress"
+                              Label="Upload progress"
+                              ShowPercentage="true" />
+
+            <div class="forge-progress-actions">
+
+                <button class="forge-action-button"
+                        disabled="@(_progress >= 100)"
+                        @onclick="IncreaseProgress">
+                    Increase progress
+                </button>
+
+                <button class="forge-secondary-button"
+                        disabled="@(_progress == 0)"
+                        @onclick="ResetProgress">
+                    Reset
+                </button>
+
+            </div>
+
+            @if (_progress == 100)
+            {
+                <div class="forge-progress-success" role="status">
+                    ✓ Operation completed successfully!
+                </div>
+            }
+
+        </div>
+
+    </section>
+
+</div>
+
+@code {
+    private bool _showDismissibleAlert = true;
+    private bool _isLoading;
+    private int _progress;
+
+    private void DismissAlert()
+    {
+        _showDismissibleAlert = false;
+    }
+
+    private void ShowAlert()
+    {
+        _showDismissibleAlert = true;
+    }
+
+    private async Task LoadDataAsync()
+    {
+        if (_isLoading)
+            return;
+
+        _isLoading = true;
+
+        try
+        {
+            await Task.Delay(2000);
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+
+    private void IncreaseProgress()
+    {
+        _progress = Math.Min(_progress + 20, 100);
+    }
+
+    private void ResetProgress()
+    {
+        _progress = 0;
+    }
+}

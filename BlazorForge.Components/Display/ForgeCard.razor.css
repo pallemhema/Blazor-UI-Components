@@ -1,0 +1,48 @@
+
+.forge-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    color: #1f2937;
+}
+
+.forge-card-border {
+    border: 1px solid #e5e7eb;
+}
+
+.forge-card-shadow {
+    box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+.forge-card-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+}
+
+.forge-card-body {
+    flex: 1;
+    padding: 1.25rem;
+}
+
+.forge-card-footer {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+}
+
+/* Padding variants */
+
+.forge-card-padding-small .forge-card-body {
+    padding: 0.75rem;
+}
+
+.forge-card-padding-medium .forge-card-body {
+    padding: 1.25rem;
+}
+
+.forge-card-padding-large .forge-card-body {
+    padding: 1.75rem;
+}

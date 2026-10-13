@@ -1,0 +1,45 @@
+<article class="@CssClass">
+    @if (Header is not null)
+    {
+        <header class="forge-card-header">
+            @Header
+        </header>
+    }
+
+    <div class="forge-card-body">
+        @ChildContent
+    </div>
+
+    @if (Footer is not null)
+    {
+        <footer class="forge-card-footer">
+            @Footer
+        </footer>
+    }
+</article>
+
+@code {
+    [Parameter]
+    public RenderFragment? Header { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public RenderFragment? Footer { get; set; }
+
+    [Parameter]
+    public bool HasShadow { get; set; } = true;
+
+    [Parameter]
+    public bool HasBorder { get; set; } = true;
+
+    [Parameter]
+    public string Padding { get; set; } = "Medium";
+
+    private string CssClass =>
+        $"forge-card " +
+        $"{(HasShadow ? "forge-card-shadow" : "")} " +
+        $"{(HasBorder ? "forge-card-border" : "")} " +
+        $"forge-card-padding-{Padding.ToLowerInvariant()}";
+}

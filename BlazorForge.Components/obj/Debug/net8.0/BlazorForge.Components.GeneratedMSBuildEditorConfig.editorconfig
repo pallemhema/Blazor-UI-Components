@@ -1,0 +1,71 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows,browser
+build_property.RootNamespace = BlazorForge.Components
+build_property.RootNamespace = BlazorForge.Components
+build_property.ProjectDir = /home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Buttons/ForgeButton.razor]
+build_metadata.AdditionalFiles.TargetPath = QnV0dG9ucy9Gb3JnZUJ1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-820wb0axvr
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Component1.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50MS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-y3ubashjbv
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Display/ForgeBadge.razor]
+build_metadata.AdditionalFiles.TargetPath = RGlzcGxheS9Gb3JnZUJhZGdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-70zw5yagar
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Display/ForgeCard.razor]
+build_metadata.AdditionalFiles.TargetPath = RGlzcGxheS9Gb3JnZUNhcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ad9quf97ti
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Feedback/ForgeAlert.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVlZGJhY2svRm9yZ2VBbGVydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-1ve9ln526r
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Feedback/ForgeProgressBar.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVlZGJhY2svRm9yZ2VQcm9ncmVzc0Jhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-hy3wueqnag
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Feedback/ForgeSpinner.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVlZGJhY2svRm9yZ2VTcGlubmVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-vxad3z32m7
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Forms/ForgeSelect.razor]
+build_metadata.AdditionalFiles.TargetPath = Rm9ybXMvRm9yZ2VTZWxlY3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-r2whwy73fg
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Forms/ForgeTextArea.razor]
+build_metadata.AdditionalFiles.TargetPath = Rm9ybXMvRm9yZ2VUZXh0QXJlYS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-35gat07k87
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Forms/ForgeTextField.razor]
+build_metadata.AdditionalFiles.TargetPath = Rm9ybXMvRm9yZ2VUZXh0RmllbGQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-eran1cl4bq
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Overlay/ForgeModal.razor]
+build_metadata.AdditionalFiles.TargetPath = T3ZlcmxheS9Gb3JnZU1vZGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-u7y5wrx2dd
+
+[/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/Overlay/ForgeTooltip.razor]
+build_metadata.AdditionalFiles.TargetPath = T3ZlcmxheS9Gb3JnZVRvb2x0aXAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-15tq2pv0oz

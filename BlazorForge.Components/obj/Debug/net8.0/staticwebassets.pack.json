@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/obj/Debug/net8.0/scopedcss/projectbundle/BlazorForge.Components.bundle.scp.css",
+      "PackagePath": "staticwebassets/BlazorForge.Components.bundle.scp.css"
+    },
+    {
+      "Id": "/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/wwwroot/background.png",
+      "PackagePath": "staticwebassets/background.png"
+    },
+    {
+      "Id": "/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/wwwroot/exampleJsInterop.js",
+      "PackagePath": "staticwebassets/exampleJsInterop.js"
+    },
+    {
+      "Id": "/home/hemalatha.pallem/Desktop/BlazorForge/BlazorForge.Components/wwwroot/forgeModal.js",
+      "PackagePath": "staticwebassets/forgeModal.js"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.BlazorForge.Components.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.BlazorForge.Components.props",
+      "PackagePath": "build\\BlazorForge.Components.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.BlazorForge.Components.props",
+      "PackagePath": "buildMultiTargeting\\BlazorForge.Components.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.BlazorForge.Components.props",
+      "PackagePath": "buildTransitive\\BlazorForge.Components.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

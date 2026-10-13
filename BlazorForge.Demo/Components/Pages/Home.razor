@@ -1,0 +1,428 @@
+﻿@page "/"
+@using BlazorForge.Components
+@using BlazorForge.Components.Buttons
+@using BlazorForge.Components.Display
+@using BlazorForge.Components.Feedback
+@rendermode InteractiveServer
+
+<PageTitle>BlazorForge | Component Showcase</PageTitle>
+
+<div class="forge-dashboard">
+
+    @* ===================== HERO SECTION ===================== *@
+
+    <section class="forge-hero">
+
+        <div class="forge-hero-content">
+
+            <div class="forge-eyebrow">
+                <span class="forge-hero-dot"></span>
+                REUSABLE UI COMPONENT LIBRARY
+            </div>
+
+            <h1>
+                Build better UIs.<br />
+                <span>One component at a time.</span>
+            </h1>
+
+            <p class="forge-hero-description">
+                Explore BlazorForge, a collection of reusable Blazor
+                components designed for consistent styling, interactive
+                behavior, and accessible user experiences.
+            </p>
+
+            <div class="forge-hero-actions">
+
+                <a href="/buttons" class="forge-primary-link">
+                    Explore Components <span>→</span>
+                </a>
+
+                <a href="/forms" class="forge-secondary-link">
+                    View Form Examples
+                </a>
+
+            </div>
+
+        </div>
+
+        @* Component preview *@
+
+        <div class="forge-hero-visual" aria-hidden="true">
+
+            <div class="forge-visual-window">
+
+                <div class="forge-window-header">
+
+                    <div class="forge-window-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <span>ComponentPreview.razor</span>
+
+                </div>
+
+                <div class="forge-code-preview">
+
+                    <div>
+                        <span class="forge-code-purple">&lt;ForgeButton</span>
+                    </div>
+
+                    <div class="forge-code-indent">
+                        Variant=<span class="forge-code-green">"Primary"</span>
+                    </div>
+
+                    <div class="forge-code-indent">
+                        Size=<span class="forge-code-green">"Large"</span>
+                    </div>
+
+                    <div>
+                        <span class="forge-code-purple">&gt;</span>
+                    </div>
+
+                    <div class="forge-code-indent">
+                        Save Changes
+                    </div>
+
+                    <div>
+                        <span class="forge-code-purple">&lt;/ForgeButton&gt;</span>
+                    </div>
+
+                </div>
+
+                <div class="forge-preview-result">
+
+                    <span class="forge-preview-label">
+                        LIVE PREVIEW
+                    </span>
+
+                    <ForgeButton Variant="ButtonVariant.Primary"
+                                Size="ButtonSize.Medium"
+                                Type="button"
+                                OnClick="SaveChanges">
+                        Save Changes
+                    </ForgeButton>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    @* ===================== DASHBOARD HEADING ===================== *@
+
+    <section class="forge-section-heading">
+
+        <div>
+            <h2>Your component toolkit</h2>
+
+            <p>
+                Everything you've built, organized in one place.
+            </p>
+        </div>
+
+        <ForgeBadge Variant="BadgeVariant.Neutral"
+                    Size="BadgeSize.Medium">
+            .NET 8 · Blazor
+        </ForgeBadge>
+
+    </section>
+
+
+    @* ===================== STATISTICS ===================== *@
+
+    <section class="forge-stats-grid">
+
+
+
+            <div class="forge-stat-card">
+
+                <div class="forge-stat-icon forge-icon-indigo">
+                    ▣
+                </div>
+
+                <span class="forge-stat-number">11</span>
+
+                <span class="forge-stat-title">
+                    Components
+                </span>
+
+                <span class="forge-stat-description">
+                    Reusable UI building blocks
+                </span>
+
+            </div>
+
+
+
+            <div class="forge-stat-card">
+
+                <div class="forge-stat-icon forge-icon-blue">
+                    ▦
+                </div>
+
+                <span class="forge-stat-number">5</span>
+
+                <span class="forge-stat-title">
+                    Categories
+                </span>
+
+                <span class="forge-stat-description">
+                    Organized by functionality
+                </span>
+
+            </div>
+
+
+
+
+            <div class="forge-stat-card">
+
+                <div class="forge-stat-icon forge-icon-green">
+                    ⌘
+                </div>
+
+                <span class="forge-stat-number">.NET 8</span>
+
+                <span class="forge-stat-title">
+                    Built for Blazor
+                </span>
+
+                <span class="forge-stat-description">
+                    Razor components and C#
+                </span>
+
+            </div>
+
+
+
+    </section>
+
+
+    @* ===================== CATEGORY HEADING ===================== *@
+
+    <section class="forge-section-heading forge-category-heading">
+
+        <div>
+            <h2>Explore by category</h2>
+
+            <p>
+                Select a category to explore its components.
+            </p>
+        </div>
+
+    </section>
+
+
+    @* ===================== CATEGORY CARDS ===================== *@
+
+    <section class="forge-category-grid">
+
+        <a href="/buttons" class="forge-category-card">
+        <ForgeCard>
+            <Header>
+
+            <div class="forge-category-icon forge-icon-indigo">
+                ▣
+            </div>
+
+            <h3>Buttons</h3>
+            </Header>
+            <ChildContent>
+
+            <p>
+                Variants, sizes, disabled states, and click interactions.
+            </p>
+            </ChildContent>
+
+            <Footer>
+
+            <span>
+                Explore buttons <b>→</b>
+            </span>
+            </Footer>
+            </ForgeCard>
+
+        </a>
+        <a href="/forms" class="forge-category-card">
+
+        <ForgeCard HasBorder="true">
+            <Header> 
+                <div class="forge-category-icon forge-icon-blue">
+                    ▤
+                </div>
+                <h3>Forms</h3>
+            </Header>
+
+            <ChildContent>
+                <p>
+                    Text fields, text areas, selection controls, and validation.
+                </p>
+            </ChildContent>
+
+            <Footer>
+                <span>
+                    Explore forms <b>→</b>
+                </span>
+            </Footer>
+        </ForgeCard>
+
+        </a>
+
+
+        <a href="/feedback" class="forge-category-card">
+        <ForgeCard>
+            <Header>
+
+            <div class="forge-category-icon forge-icon-amber">
+                ◉
+            </div>
+
+            <h3>Feedback</h3>
+            </Header>
+            <ChildContent>
+
+            <p>
+                Alerts, loading indicators, and progress visualization.
+            </p>
+            </ChildContent>
+            <Footer>
+
+            <span>
+                Explore feedback <b>→</b>
+            </span>
+
+            </Footer>
+            </ForgeCard>
+
+        </a>
+
+
+        <a href="/display" class="forge-category-card">
+
+        <ForgeCard>
+            <Header>
+
+            <div class="forge-category-icon forge-icon-green">
+                ▦
+            </div>
+
+            <h3>Display</h3>
+
+            </Header>
+            <ChildContent>
+
+            <p>
+                Badges and cards for presenting information clearly.
+            </p>
+
+            </ChildContent>
+            <Footer>
+
+            <span>
+                Explore display <b>→</b>
+            </span>
+            </Footer>
+        </ForgeCard>
+
+        </a>
+
+
+        <a href="/overlays" class="forge-category-card">
+        <ForgeCard>
+            <Header>
+            <div class="forge-category-icon forge-icon-purple">
+                ▢
+            </div>
+
+            <h3>Overlays</h3>
+
+            </Header>
+            <ChildContent>
+                            <p>
+                Modal dialogs and contextual tooltips for confirmations and information
+            </p>
+
+            </ChildContent>
+            
+            <Footer>
+            <span>
+                Explore overlays <b>→</b>
+            </span>
+            </Footer>
+
+
+        </ForgeCard>
+
+           
+
+        </a>
+
+    </section>
+
+
+    @* ===================== BOTTOM BANNER ===================== *@
+
+    <section class="forge-bottom-banner">
+
+        <div>
+
+            <h3>
+                Designed for reuse. Built for consistency.
+            </h3>
+
+            <p>
+                Explore the component APIs and see how each building block
+                can be used in a Blazor application.
+            </p>
+
+        </div>
+
+        <a href="/buttons">
+            Start exploring →
+        </a>
+
+    </section>
+
+
+    @* ===================== INTERACTION FEEDBACK ===================== *@
+
+    @if (_showSaveMessage)
+    {
+        <div class="forge-save-feedback">
+
+            <ForgeAlert Variant="AlertVariant.Success"
+                        Title="Action completed"
+                        Dismissible="true"
+                        OnDismiss="DismissSaveMessage">
+                The Save Changes component was clicked successfully.
+            </ForgeAlert>
+
+        </div>
+    }
+
+</div>
+
+
+@code {
+
+    private bool _showSaveMessage;
+
+    private void SaveChanges()
+    {
+        Console.WriteLine("SaVe changes clicked....");
+        _showSaveMessage = true;
+    }
+
+    private void DismissSaveMessage()
+    {
+        _showSaveMessage = false;
+    }
+
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/BlazorForge.Tests.props" />
+</Project>

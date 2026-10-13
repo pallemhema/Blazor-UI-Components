@@ -1,0 +1,80 @@
+@if (_isVisible)
+{
+    <div class="@CssClass"
+         role="@AriaRole"
+         aria-live="@AriaLive">
+
+        @if (ShowIcon)
+        {
+            <span class="forge-alert-icon" aria-hidden="true">
+                @Icon
+            </span>
+        }
+
+        <div class="forge-alert-content">
+            @if (!string.IsNullOrWhiteSpace(Title))
+            {
+                <strong class="forge-alert-title">@Title</strong>
+            }
+
+            <div class="forge-alert-message">
+                @ChildContent
+            </div>
+        </div>
+
+        @if (Dismissible)
+        {
+            <button type="button"
+                    class="forge-alert-dismiss"
+                    aria-label="Dismiss alert"
+                    @onclick="Dismiss">
+                &times;
+            </button>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public AlertVariant Variant { get; set; } = AlertVariant.Info;
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public bool ShowIcon { get; set; } = true;
+
+    [Parameter]
+    public bool Dismissible { get; set; }
+
+    [Parameter]
+    public EventCallback OnDismiss { get; set; }
+
+    private bool _isVisible = true;
+
+    private string CssClass =>
+        $"forge-alert forge-alert-{Variant.ToString().ToLowerInvariant()}";
+
+    private string Icon => Variant switch
+    {
+        AlertVariant.Success => "✓",
+        AlertVariant.Warning => "⚠",
+        AlertVariant.Error => "✕",
+        _ => "ℹ"
+    };
+
+    private string AriaRole =>
+        Variant == AlertVariant.Error ? "alert" : "status";
+
+    private string AriaLive =>
+        Variant == AlertVariant.Error ? "assertive" : "polite";
+
+    private async Task Dismiss()
+    {
+        _isVisible = false;
+        await OnDismiss.InvokeAsync();
+    }
+}

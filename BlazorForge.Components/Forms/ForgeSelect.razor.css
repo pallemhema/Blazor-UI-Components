@@ -1,0 +1,50 @@
+.forge-select {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+}
+
+.forge-select-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.forge-select-required {
+    margin-left: 0.2rem;
+    color: #dc2626;
+}
+
+.forge-select-input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #111827;
+    font: inherit;
+    cursor: pointer;
+}
+
+.forge-select-input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgb(79 70 229 / 15%);
+}
+
+.forge-select-input:disabled {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.forge-select-input.invalid {
+    border-color: #dc2626;
+}
+
+.forge-select-validation {
+    color: #dc2626;
+    font-size: 0.8rem;
+}

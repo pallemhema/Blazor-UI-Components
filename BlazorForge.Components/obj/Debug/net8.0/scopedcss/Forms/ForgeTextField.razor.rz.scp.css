@@ -1,0 +1,62 @@
+.forge-text-field[b-eran1cl4bq] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.forge-text-field-label[b-eran1cl4bq] {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.forge-text-field-required[b-eran1cl4bq] {
+    color: #dc2626;
+    margin-left: 0.25rem;
+}
+
+.forge-text-field-input[b-eran1cl4bq] {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 0.625rem 0.75rem;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    font: inherit;
+    color: #111827;
+    background-color: white;
+
+    transition:
+        border-color 150ms ease,
+        box-shadow 150ms ease;
+}
+
+.forge-text-field-input:focus[b-eran1cl4bq] {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgb(37 99 235 / 15%);
+}
+
+.forge-text-field-input:disabled[b-eran1cl4bq] {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+.forge-text-field-input:read-only[b-eran1cl4bq] {
+    background-color: #f9fafb;
+}
+
+.forge-text-field-input.modified.invalid[b-eran1cl4bq] {
+    border-color: #dc2626;
+}
+
+.forge-text-field-validation[b-eran1cl4bq] {
+    font-size: 0.8125rem;
+    color: #dc2626;
+}
+

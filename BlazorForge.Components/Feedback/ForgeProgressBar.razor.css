@@ -1,0 +1,49 @@
+.forge-progress-container {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.forge-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.forge-progress-track {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 12px;
+    overflow: hidden;
+    border-radius: 999px;
+    background-color: #e5e7eb;
+}
+
+.forge-progress-segment {
+    flex: 1;
+    height: 100%;
+}
+
+.forge-progress-light {
+    background-color: #a7f3d0;
+}
+
+.forge-progress-medium {
+    background-color: #34d399;
+}
+
+.forge-progress-dark {
+    background-color: #047857;
+}
+
+.forge-progress-remaining {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: #e5e7eb;
+    transition: width 0.3s ease;
+}
+

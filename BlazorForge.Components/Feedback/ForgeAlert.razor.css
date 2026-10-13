@@ -1,0 +1,70 @@
+.forge-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    margin: 0.75rem 0;
+}
+
+.forge-alert-icon {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.forge-alert-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.forge-alert-title {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.forge-alert-message {
+    font-size: 0.925rem;
+    line-height: 1.5;
+}
+
+.forge-alert-dismiss {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 0.25rem;
+}
+
+.forge-alert-dismiss:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+}
+
+.forge-alert-success {
+    background: #f0fdf4;
+    border-color: #86efac;
+    color: #166534;
+}
+
+.forge-alert-info {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: #1e40af;
+}
+
+.forge-alert-warning {
+    background: #fffbeb;
+    border-color: #fcd34d;
+    color: #92400e;
+}
+
+.forge-alert-error {
+    background: #fef2f2;
+    border-color: #fca5a5;
+    color: #991b1b;
+}

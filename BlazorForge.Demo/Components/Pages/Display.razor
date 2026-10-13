@@ -1,0 +1,312 @@
+@page "/display"
+@rendermode InteractiveServer
+
+@using BlazorForge.Components.Display
+
+<PageTitle>Display | BlazorForge</PageTitle>
+
+<div class="forge-component-page">
+
+    @* Page header *@
+
+    <div class="forge-page-header">
+        <div>
+            <div class="forge-page-eyebrow">COMPONENTS / DISPLAY</div>
+
+            <h1>Display</h1>
+
+            <p>
+                Present information clearly using reusable badges
+                and flexible cards.
+            </p>
+        </div>
+    </div>
+
+    @* Badge variants *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Badge variants</h2>
+
+            <p>
+                Use semantic badge variants to communicate status,
+                categories, and contextual information.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-badge-preview">
+
+            <ForgeBadge Variant="BadgeVariant.Primary">
+                Primary
+            </ForgeBadge>
+
+            <ForgeBadge Variant="BadgeVariant.Success">
+                Success
+            </ForgeBadge>
+
+            <ForgeBadge Variant="BadgeVariant.Warning">
+                Warning
+            </ForgeBadge>
+
+            <ForgeBadge Variant="BadgeVariant.Danger">
+                Danger
+            </ForgeBadge>
+
+            <ForgeBadge Variant="BadgeVariant.Neutral">
+                Neutral
+            </ForgeBadge>
+
+        </div>
+
+    </section>
+
+    @* Badge sizes *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Badge sizes</h2>
+
+            <p>
+                Choose a badge size that fits the surrounding content.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-badge-preview">
+
+            <div class="forge-display-example">
+                <ForgeBadge Size="BadgeSize.Small"
+                            Variant="BadgeVariant.Primary">
+                    Small
+                </ForgeBadge>
+
+                <span>Small badge</span>
+            </div>
+
+            <div class="forge-display-example">
+                <ForgeBadge Size="BadgeSize.Medium"
+                            Variant="BadgeVariant.Primary">
+                    Medium
+                </ForgeBadge>
+
+                <span>Medium badge</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    @* Badge dot indicators *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Status indicators</h2>
+
+            <p>
+                Add a dot indicator to draw attention to a status.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-badge-preview">
+
+            <ForgeBadge Variant="BadgeVariant.Success"
+                        ShowDot="true">
+                Active
+            </ForgeBadge>
+
+            <ForgeBadge Variant="BadgeVariant.Warning"
+                        ShowDot="true">
+                Pending
+            </ForgeBadge>
+
+            <ForgeBadge Variant="BadgeVariant.Danger"
+                        ShowDot="true">
+                Failed
+            </ForgeBadge>
+
+            <ForgeBadge Variant="BadgeVariant.Neutral"
+                        ShowDot="true">
+                Offline
+            </ForgeBadge>
+
+        </div>
+
+    </section>
+
+    @* Basic card *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Basic card</h2>
+
+            <p>
+                Use cards to group related information into
+                self-contained sections.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview">
+
+            <div class="forge-card-demo">
+                <ForgeCard>
+                    <ChildContent>
+                        <h3 class="forge-card-title">
+                            Welcome to BlazorForge
+                        </h3>
+
+                        <p class="forge-card-description">
+                            Build consistent interfaces using
+                            reusable Razor components.
+                        </p>
+                    </ChildContent>
+                </ForgeCard>
+            </div>
+
+        </div>
+
+    </section>
+
+    @* Card with header and footer *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Card with header and footer</h2>
+
+            <p>
+                Organize content into distinct header, body,
+                and footer sections.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview">
+
+            <div class="forge-card-demo">
+
+                <ForgeCard HasBorder="true"
+                           HasShadow="true">
+
+                    <Header>
+                        <div class="forge-card-header-content">
+                            <div>
+                                <h3 class="forge-card-title">
+                                    Project status
+                                </h3>
+
+                                <p class="forge-card-subtitle">
+                                    BlazorForge development
+                                </p>
+                            </div>
+
+                            <ForgeBadge Variant="BadgeVariant.Success"
+                                        ShowDot="true">
+                                Active
+                            </ForgeBadge>
+                        </div>
+                    </Header>
+
+                    <ChildContent>
+                        <p class="forge-card-description">
+                            The reusable component library is taking
+                            shape. The current focus is on creating
+                            interactive examples for each component.
+                        </p>
+                    </ChildContent>
+
+                    <Footer>
+                        <div class="forge-card-footer-content">
+                            <span>Project progress</span>
+                            <strong>In development</strong>
+                        </div>
+                    </Footer>
+
+                </ForgeCard>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    @* Card configuration *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Card appearance</h2>
+
+            <p>
+                Compare cards with different border and shadow settings.
+            </p>
+        </div>
+
+        <div class="forge-card-grid">
+
+            <div>
+                <span class="forge-example-label">
+                    Border and shadow
+                </span>
+
+                <ForgeCard HasBorder="true"
+                           HasShadow="true"
+                           Padding="Medium">
+                    <ChildContent>
+                        <h3 class="forge-card-title">
+                            Standard card
+                        </h3>
+
+                        <p class="forge-card-description">
+                            A bordered card with a shadow.
+                        </p>
+                    </ChildContent>
+                </ForgeCard>
+            </div>
+
+            <div>
+                <span class="forge-example-label">
+                    Border only
+                </span>
+
+                <ForgeCard HasBorder="true"
+                           HasShadow="false"
+                           Padding="Medium">
+                    <ChildContent>
+                        <h3 class="forge-card-title">
+                            Minimal card
+                        </h3>
+
+                        <p class="forge-card-description">
+                            A bordered card without a shadow.
+                        </p>
+                    </ChildContent>
+                </ForgeCard>
+            </div>
+
+            <div>
+                <span class="forge-example-label">
+                    Shadow only
+                </span>
+
+                <ForgeCard HasBorder="false"
+                           HasShadow="true"
+                           Padding="Medium">
+                    <ChildContent>
+                        <h3 class="forge-card-title">
+                            Elevated card
+                        </h3>
+
+                        <p class="forge-card-description">
+                            A shadow creates visual separation.
+                        </p>
+                    </ChildContent>
+                </ForgeCard>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

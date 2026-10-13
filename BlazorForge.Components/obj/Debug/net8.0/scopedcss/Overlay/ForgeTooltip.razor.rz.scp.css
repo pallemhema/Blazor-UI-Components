@@ -1,0 +1,64 @@
+.forge-tooltip-container[b-15tq2pv0oz] {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.forge-tooltip-trigger[b-15tq2pv0oz] {
+    display: inline-flex;
+    align-items: center;
+}
+
+.forge-tooltip[b-15tq2pv0oz] {
+    position: absolute;
+    z-index: 1000;
+    width: max-content;
+    max-width: 240px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #1f2937;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+    overflow-wrap: anywhere;
+    pointer-events: none;
+}
+
+/* Top placement */
+
+.forge-tooltip-top[b-15tq2pv0oz] {
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Bottom placement */
+
+.forge-tooltip-bottom[b-15tq2pv0oz] {
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Left placement */
+
+.forge-tooltip-left[b-15tq2pv0oz] {
+    right: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Right placement */
+
+.forge-tooltip-right[b-15tq2pv0oz] {
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .forge-tooltip[b-15tq2pv0oz] {
+        transition: none;
+    }
+}

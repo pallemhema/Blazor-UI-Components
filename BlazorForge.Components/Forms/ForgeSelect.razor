@@ -1,0 +1,95 @@
+@typeparam TValue
+@inherits InputBase<TValue>
+@using Microsoft.AspNetCore.Components.Forms
+
+<div class="forge-select">
+
+    @if (!string.IsNullOrWhiteSpace(Label))
+    {
+        <label for="@InputId" class="forge-select-label">
+            @Label
+
+            @if (Required)
+            {
+                <span class="forge-select-required"
+                      aria-hidden="true">*</span>
+            }
+        </label>
+    }
+
+    <select id="@InputId"
+            class="forge-select-input @CssClass"
+            disabled="@Disabled"
+            required="@Required"
+            @bind="CurrentValueAsString">
+
+        @if (!string.IsNullOrWhiteSpace(Placeholder))
+        {
+            <option value="">@Placeholder</option>
+        }
+
+        @if (Options is not null)
+        {
+            @foreach (var option in Options)
+            {
+                <option value="@option.Value">
+                    @option.Text
+                </option>
+            }
+        }
+
+    </select>
+
+    @if (EditContext is not null)
+    {
+        <ValidationMessage For="@ValueExpression" />
+    }
+
+</div>
+@code {
+    [Parameter]
+    public string? Label { get; set; }
+
+    [Parameter]
+    public string? Placeholder { get; set; } = "Select an option";
+
+    [Parameter]
+    public bool Required { get; set; }
+
+    [Parameter]
+    public bool Disabled { get; set; }
+
+    [Parameter]
+    public string? Id { get; set; }
+
+    [Parameter]
+    public IEnumerable<ForgeSelectOption<TValue>>? Options { get; set; }
+
+    private readonly string _generatedId =
+        $"forge-select-{Guid.NewGuid():N}";
+
+    private string InputId => Id ?? _generatedId;
+
+    protected override bool TryParseValueFromString(
+        string? value,
+        out TValue result,
+        out string? validationErrorMessage)
+    {
+        if (BindConverter.TryConvertTo<TValue>(
+                value,
+                System.Globalization.CultureInfo.InvariantCulture,
+                out var parsedValue))
+        {
+            result = parsedValue!;
+            validationErrorMessage = null;
+            return true;
+        }
+
+        result = default!;
+
+        validationErrorMessage =
+            $"The selected value is not valid for {FieldIdentifier.FieldName}.";
+
+        return false;
+    }
+}

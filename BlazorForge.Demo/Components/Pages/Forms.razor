@@ -1,0 +1,234 @@
+@page "/forms"
+
+@using BlazorForge.Components.Forms
+@using System.ComponentModel.DataAnnotations
+@rendermode InteractiveServer
+
+<PageTitle>Forms | BlazorForge</PageTitle>
+
+<div class="forge-component-page">
+
+    <div class="forge-page-header">
+        <div>
+            <div class="forge-page-eyebrow">COMPONENTS / FORMS</div>
+
+            <h1>Forms</h1>
+
+            <p>
+                Build structured forms with reusable input components,
+                two-way data binding, and validation.
+            </p>
+        </div>
+    </div>
+
+    @* Text field *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Text field</h2>
+
+            <p>
+                Capture single-line text with labels, placeholders,
+                and required-field indicators.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-form-preview">
+
+            <div class="forge-form-control">
+                <ForgeTextField Label="Full name"
+                                Placeholder="Enter your full name"
+                                @bind-Value="_fullName" />
+            </div>
+
+            <div class="forge-form-control">
+                <ForgeTextField Label="Email address"
+                                Placeholder="you@example.com"
+                                @bind-Value="_email" />
+            </div>
+
+            <div class="forge-form-control">
+                <ForgeTextField Label="Required field"
+                                Placeholder="This field is required"
+                                Required="true"
+                                @bind-Value="_requiredText" />
+            </div>
+
+            <div class="forge-form-output">
+                <span>Full name:</span>
+                <strong>@(_fullName is { Length: > 0 } ? _fullName : "Not entered")</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+    @* Text area *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Text area</h2>
+
+            <p>
+                Capture longer text, descriptions, and comments.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-form-preview">
+
+            <div class="forge-form-control">
+                <ForgeTextArea Label="Description"
+                               Placeholder="Tell us something about yourself..."
+                               Rows="4"
+                               @bind-Value="_description" />
+            </div>
+
+            <div class="forge-form-output">
+                <span>Character count:</span>
+                <strong>@(_description?.Length ?? 0)</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+    @* Select *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Select</h2>
+
+            <p>
+                Let users choose an option from a predefined list.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-form-preview">
+
+            <div class="forge-form-control">
+                <ForgeSelect TValue="string"
+                             Label="Country"
+                             Placeholder="Choose a country"
+                             Options="_countryOptions"
+                             @bind-Value="_country" />
+            </div>
+
+            <div class="forge-form-output">
+                <span>Selected country:</span>
+                <strong>@(_country ?? "None selected")</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+    @* Form validation *@
+
+    <section class="forge-demo-section">
+
+        <div class="forge-demo-heading">
+            <h2>Form validation</h2>
+
+            <p>
+                Combine input components with EditForm and data
+                annotations to validate user input.
+            </p>
+        </div>
+
+        <div class="forge-demo-preview forge-form-preview">
+
+            <EditForm Model="_formModel"
+                      OnValidSubmit="SubmitForm">
+
+                <DataAnnotationsValidator />
+
+                <div class="forge-form-control">
+                    <ForgeTextField Label="Username"
+                                    Placeholder="Enter a username"
+                                    Required="true"
+                                    @bind-Value="_formModel.Username" />
+
+                </div>
+
+                <div class="forge-form-control">
+                    <ForgeTextField Label="Email"
+                                    Placeholder="you@example.com"
+                                    Required="true"
+                                    @bind-Value="_formModel.Email" />
+
+                </div>
+
+                <div class="forge-form-actions">
+                    <button type="submit" class="forge-submit-button">
+                        Submit form
+                    </button>
+
+                    <button type="button"
+                            class="forge-reset-button"
+                            @onclick="ResetForm">
+                        Reset
+                    </button>
+                </div>
+
+                @if (_formSubmitted)
+                {
+                    <ForgeAlert Variant="AlertVariant.Success"
+                        Dismissible="true">
+                            Form submitted successfully!
+                    </ForgeAlert>
+                  
+                }
+
+            </EditForm>
+
+        </div>
+
+    </section>
+
+</div>
+
+@code {
+    private string? _fullName;
+    private string? _email;
+    private string? _requiredText;
+    private string? _description;
+    private string? _country;
+
+    private bool _formSubmitted;
+
+    private readonly List<ForgeSelectOption<string>> _countryOptions =
+    [
+        new() { Text = "India", Value = "India" },
+        new() { Text = "Japan", Value = "Japan" },
+        new() { Text = "United States", Value = "United States" }
+    ];
+
+    private readonly ProfileFormModel _formModel = new();
+
+    private void SubmitForm()
+    {
+        _formSubmitted = true;
+    }
+
+    private void ResetForm()
+    {
+        _formModel.Username = string.Empty;
+        _formModel.Email = string.Empty;
+        _formSubmitted = false;
+    }
+
+    private sealed class ProfileFormModel
+    {
+        [Required(ErrorMessage = "Username is required.")]
+        [StringLength(30, MinimumLength = 3,
+            ErrorMessage = "Username must contain between 3 and 30 characters.")]
+        public string Username { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Enter a valid email address.")]
+        public string Email { get; set; } = string.Empty;
+    }
+}
